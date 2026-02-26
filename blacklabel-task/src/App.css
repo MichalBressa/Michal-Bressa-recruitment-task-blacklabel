@@ -1,0 +1,31 @@
+nav {
+  margin-bottom: 40px;
+  background-color: #1a80bb;
+}
+
+.chartsContainer {
+  max-width: 800px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  border: 1px solid transparent;
+  padding: 1em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #156492;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #229ee6;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

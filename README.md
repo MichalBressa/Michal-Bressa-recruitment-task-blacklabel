@@ -1,62 +1,27 @@
-# Zadanie rekrutacyjne — Data Visualization (Frontend)
-
-## Kontekst
-Dane w pliku `data.json` pochodzą z platformy **e-commerce** i zawierają informacje o zamówieniach, m.in.:
-- czas,
-- lokalizację (kraj, miasto, dane geograficzne),
-- kategorie produktów,
-- ilości,
-- ceny,
-- dodatkowe metadane (płatność, typ klienta, urządzenie, czas dostawy).
-
-Twoim celem jest **zrozumienie danych**, wybranie **niektórych informacji** i przedstawienie ich w **czytelnej, sensownej formie wizualnej** (dataviz).
-
-
-## Zadanie
-Przeanalizuj dane i:
-- zdecyduj, które pola są dla Ciebie istotne,
-- agreguj dane w sposób, który uznasz za sensowny,
-
-Przygotuj **maksymalnie 3** wykresy.
-- samodzielnie zdecyduj, **jakie wizualizacje** przygotujesz (na podstawie wybranych przez Ciebie danych),
-- nie narzucamy konkretnych metryk ani podziałów,
-- zależy nam na **selekcji najistotniejszych dla Ciebie informacji**, nie na pokazaniu wszystkiego.
-
-
 ## Opis rozwiązania
-W pliku README dodaj opis, w którym wyjaśnisz:
-- jakie dane uznałeś/aś za kluczowe,
-- dlaczego wybrałeś/aś właśnie takie wizualizacje (typy wykresów).
 
+data.json zawiera wiele danych na temat zamówień, więc do wykresów wybrałem te które moim zdaniem mogą mieć największy wpływ na decyzje firmy. Dane takie jak procent powracających konsumentów bądź który sektor najlepiej radzi sobie w sprzedaży. Za mniej istotny ale wciąż warty uwagi uznałem również czas dostarczenia.
+
+Pierwszy wykres - Bar Chart - pokazuje stosunek całości przychodu między głównymi kategoriami oraz jaka część tego przychodu pochodzi od nowych lub powracających kupujących. Wybrałem ten rodzaj wykresu ponieważ jest prosty i czytelny w swojej strukturze - na pierwszy rzut oka widać proporcję. Uważam że z perspektywy biznesu wiedza o tym czy mamy dużo lojalnych kupujących jest bardzo istotna - na jej podstawie można decydować czy istnieje potrzeba przyciągnięcia nowych konsumentów (więcej marketingu, przeceny itd) czy skupić się na utrzymaniu konsumenta.
+
+Następny wykres - Pie Chart - skupia się na podziale całkowitego dochodu między głównymi kategoriami oraz ich podkategoriami. Daje on perspektywę na to ile każda mniejsza kategoria wnosi do ogólnej puli i pozwala na dyskusję o ich dochodowości.
+
+Aby przedstawić dane o czasie dostawy w odniesieniu do lokalizacji zdecydowałem się na Bubble Graph na dwóch osiach reprezentujących długość i szerokość geograficzną. Punkty ładnie układają się jak na mapie i każdy dostarcza informacji o pełnej cenie zamówienia oraz jego kategorii. Im dany punkt ma więszką średnice tym dłużej trwała dostawa. Różnica w wiekości oraz ułożenie odpwiadające mapie z łatwością pozwala na zrozumienie gdzie dostarczenie zajmuję więcej czasu.
+
+Co chciałbym poprawić gdybym miał więcej czasu:
+
+- trzeci wykres aż prosi się o mapę Europy jako tło
+- w mojej głowie istnieje możliwość połączenia pierwszych dwóch wykresów w jeden typu Pie o 3 warstwach, ale kosztem przystępności. Nowa trzecia warstwa reprezentowałaby podział na nowych i powracających kupujących.
+- React'owe komponenty odpowiedzialne za renderowanie wykresów mają potencjał na bycie bardziej proceduralne
 
 ## Technologia i uruchomienie
-- interesuje nas **wyłącznie wersja desktopowa** (brak wymagań dot. mobile, nie dokładaj sobie niepotrzebnej pracy),
-- **nie narzucamy tech stacku** (technologia nie jest kryterium oceny):
-- framework: dowolny lub brak,
-- biblioteki: także dowolne. W naszej firmie skupiamy się głównie na Highcharts, ale nie wymagamy znajomości akurat tej biblioteki, więc jeśli chcesz użyć innej prostszej - gorąco do tego zachęcamy.
 
+Korzystałem z MUI X Charts oraz Highcharts do wykresów oraz React, TypeScript, Node oraz Vite. Node jest wymagany do instalacji wszystkich paczek.
 
-## Uruchomienie projektu
-W pliku README opisz także wymagania (np. Node, Python, serwer lokalny) i kroki przydatne dla nas do uruchomienia Twojego projektu.
-Projekt powinien być **łatwy do uruchomienia lokalnie** bez dodatkowych wyjaśnień.
+Uruchomienie:
 
-
-## Czas
-Nie oczekujemy kompletnego rozbudowanego produktu.
-Interesuje nas:
-- sposób myślenia,
-- decyzje projektowe,
-- umiejętność pracy na danych,
-- czytelność wizualna. Duży plus za fajny design.
-Nie liczy się ilość/wielkość projektu, tylko jakość połączona z prostotą i umiejętność wytłumaczenia podejścia.
-
-Przewidujemy, że wykonanie zadania powinno zająć maksymalnie kilka godzin.
-Na rozwiazanie masz dokładnie 7 dni licząc od daty otrzymania tego zadania.
-
-
-## Jak zacząć i wysłać rozwiązanie
-- wykonaj fork tego repozytorium na swoje konto GitHub,
-- upewnij się, że wszystkie zmiany są wypchnięte do Twojego repozytorium na GitHubie,
-- wyślij link do swojego repozytorium zawierającego rozwiązanie na adres e-mail: rekrutacja@blacklabel.net
-
-Nie wysyłaj Pull Requesta do tego repozytorium - oceniany będzie wyłącznie kod w Twoim forku.
+- uruchom nowy terminal
+- przejdź do folderu blacklabel-task: cd blacklabel-task
+- zainstaluj paczki używając: npm i
+- uruchom lokalnie projekt komendą: npm run dev
+- wejdź w link podany w terminalu
